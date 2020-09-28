@@ -1,0 +1,24 @@
+<h1>Shops#index</h1>
+
+<%= link_to "新規作成", new_shop_path, class: "btn btn-sm btn-primary" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <% if @shops.present? %>
+        <% @shops.each do |shop| %>
+        <div class="mt-2 mb-3" style="border: solid 2px black;">
+          <div class="user mb-1">
+            <div class="user-body">
+            
+              <!-- ショップ名 -->
+              <p class="user-name">名前：<%= link_to shop.name, shop_path(shop.id) %></p>
+              
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

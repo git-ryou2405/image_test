@@ -1,0 +1,19 @@
+<%= form_with model: @shop, local: true do |f| %>
+  
+  <%= f.label :name, "ショップ名" %>
+  <%= f.text_field :name %>
+  <br>
+  
+  <div class="mt-2 mb-3" style="border: solid 1px black;"></div>
+  
+  <!-- 複数イメージ -->
+  <%= f.fields_for :shop_files do |i| %>
+    <%= i.label :file, "複数イメージ" %>
+    <%= i.file_field :file, multiple: true, name: "shop_files[file][]" %>
+  <% end %>
+  
+  <div class="mt-2 mb-3" style="border: solid 1px black;"></div>
+  
+  <%= f.submit "作成" %>
+<% end %>
+
